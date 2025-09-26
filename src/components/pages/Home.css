@@ -1,0 +1,168 @@
+#landing {
+    height: calc(100vh - 76px);
+}
+
+.landing__wrapper {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__heading {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    transition: all 600ms ease-in-out;
+}
+
+.main__heading h1 {
+    font-size: 128px;
+    line-height: 125px;
+    font-weight: 400;
+    /* text-align: center; */
+    letter-spacing: -.05em;
+    scale: .8;
+}
+
+.landing__para {
+    position: absolute;
+    width: 316px;
+    height: 72px;
+    top: 86%;
+    left: 3%;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#left__section {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    transform: translate(-55%, -50%);
+    transition: all 500ms ease-in-out;
+}
+
+#right__section {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    right: 0;
+    transform: translate(55%, -50%);
+    opacity: 1;
+    transition: all 500ms ease-in-out;
+}
+
+.relative__left,
+.relative__right {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.left__box, 
+.right__box {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed #A0A4AB;
+    rotate: 45deg;
+}
+
+#discover__btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    width: 150px;
+    height: 44px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+#discover__btn:hover .discover__arrow {
+   scale: 1.2;
+}
+
+#test__btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    width: 126px;
+    height: 44px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+#test__btn:hover .test__arrow {
+   scale: 1.2; 
+}
+
+.main__heading.moveright {
+    transform: translateX(25%); 
+}
+.main__heading.moveleft {
+    transform: translateX(-25%); 
+}
+
+.skincare {
+    display: block;
+    width: 730px;
+    transition: all 600ms ease-in-out;
+}
+
+.skincare.moveright {
+    transform: translateX(18%);
+}
+
+.skincare.moveleft {
+    transform: translateX(-18%);
+}
+
+#right__section.moveright {
+    opacity: 0;
+    visibility: hidden;
+}
+#left__section.moveleft {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.discover__arrow {
+    width: 44px;
+    height: 44px;
+    margin-right: 12px;
+    transition: all 300ms ease;
+}
+
+.test__arrow {
+    transition: all 300ms ease;
+}
