@@ -1,42 +1,32 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import MiniHome from "./MiniHome";
 import "./Home.css";
 import iconLeft from "../../assets/buttin-icon-left.svg";
 import iconRight from "../../assets/buttin-icon-right.svg";
 
-function leftHover() {
-  document.querySelector(".main__heading").classList.add("moveright");
-  document.querySelector(".skincare").classList.add("moveright");
-  document.getElementById("right__section").classList.add("moveright")
-}
-
-function rightHover() {
-  document.querySelector(".main__heading").classList.add("moveleft")
-  document.querySelector(".skincare").classList.add("moveleft")
-  document.getElementById("left__section").classList.add("moveleft")
-}
-
-function leftUnhover() {
-  document.querySelector(".main__heading").classList.remove("moveright");
-  document.querySelector(".skincare").classList.remove("moveright");
-  document.getElementById("right__section").classList.remove("moveright")
-}
-
-function rightUnhover() {
-   document.querySelector(".main__heading").classList.remove("moveleft");
-  document.querySelector(".skincare").classList.remove("moveleft");
-  document.getElementById("left__section").classList.remove("moveleft")
-}
-
 const Home = () => {
+  const [hoverSide, setHoverSide] = useState(null);
+
   return (
     <section id="landing">
       <div className="landing__wrapper">
         <div className="main__container">
-          <div className="main__heading">
+          <div
+            className={`main__heading ${
+              hoverSide === "left" ? "moveright" : ""
+            } ${hoverSide === "right" ? "moveleft" : ""}`}
+          >
             <h1 className="skinspan">
               Sophisticated
               <br />
-              <span className="skincare">skincare</span>
+              <span
+                className={`skincare ${
+                  hoverSide === "left" ? "moveright" : ""
+                } ${hoverSide === "right" ? "moveleft" : ""}`}
+              >
+                skincare
+              </span>
             </h1>
           </div>
         </div>
@@ -49,29 +39,46 @@ const Home = () => {
             what your skin needs.
           </p>
         </div>
-        <div id="left__section">
+        <div
+          id="left__section"
+          className={hoverSide === "right" ? "moveleft" : ""}
+        >
           <div className="relative__left">
             <div className="left__box"></div>
           </div>
           <button
             id="discover__btn"
-            onMouseEnter={leftHover}
-            onMouseLeave={leftUnhover}
+            onMouseEnter={() => setHoverSide("left")}
+            onMouseLeave={() => setHoverSide(null)}
           >
             <img src={iconLeft} alt="left icon" className="discover__arrow" />
             <p>DISCOVER A.I</p>
           </button>
         </div>
-        <div id="right__section">
+        <div
+          id="right__section"
+          className={hoverSide === "left" ? "moveright" : ""}
+        >
           <div className="relative__right">
             <div className="right__box"></div>
           </div>
-          <button id="test__btn"
-          onMouseEnter={rightHover}
-            onMouseLeave={rightUnhover}>
-            <p>TAKE TEST</p>
-            <img src={iconRight} alt="right icon" className="test__arrow" />
-          </button>
+          <Link to={"./testing"}>
+            <button
+              id="test__btn"
+              onMouseEnter={() => setHoverSide("right")}
+              onMouseLeave={() => setHoverSide(null)}
+            >
+              <p>TAKE TEST</p>
+              <img src={iconRight} alt="right icon" className="test__arrow" />
+            </button>
+          </Link>
+        </div>
+        <div id="mini__landing">
+          <div className="miniborders">
+            <div className="inner__border"></div>
+            <div className="outer__border"></div>
+          </div>
+          <MiniHome />
         </div>
       </div>
     </section>
