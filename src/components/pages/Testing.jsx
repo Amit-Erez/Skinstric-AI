@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import "./Testing.css";
 import iconLeft from "../../assets/buttin-icon-left.svg";
 import iconRight from "../../assets/buttin-icon-right.svg";
+import iconFrame from "../../assets/rect-outer-line.svg"
+import { GoDotFill } from "react-icons/go";
+import "./Testing.css";
 
 const Testing = () => {
   const [step, setStep] = useState("name");
   const [user, setUser] = useState({ name: "", location: "" });
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
-  const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const UserForm = (e) => {
     if (e.key === "Enter") {
@@ -59,10 +62,10 @@ const Testing = () => {
 
   useEffect(() => {
     if (user.name !== "" && user.location !== "") {
-      const msg = `"SUCCESS": "Added ${user.name} from ${user.location}"`;
-      setSuccess(msg);
-      console.log(msg);
-      sendUser();
+      setLoading(true);
+      setTimeout(() => {
+        sendUser();
+      }, 600);
     }
   }, [user]);
 
@@ -72,10 +75,13 @@ const Testing = () => {
         "https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne",
         user
       );
-      console.log("Server response:", response.data);
+      console.log("Full API Response:", response.data);
     } catch (error) {
       console.error("Error sending user:", error);
     }
+    setLoading(false);
+    const msg = `"SUCCESS": "Added ${user.name} from ${user.location}"`;
+    console.log(msg);
   }
 
   return (
@@ -83,33 +89,62 @@ const Testing = () => {
       <div className="start">
         <p>TO START ANALYSIS</p>
       </div>
-      <div className="user__form">
-        <p>click to type</p>
-        {step !== "done" ? (
+      {step !== "done" ? (
+        <div className="user__form">
+          <p className="prompt">click to type</p>
           <div className="input__box">
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            {error && <p className="err__msg">{error}</p>}
             <input
               type="text"
               value={input}
               onChange={handleChange}
               onKeyDown={UserForm}
               placeholder={
-                step === "name" ? "Introduce Yourself" : "your city name"
+                step === "name" ? "Introduce Yourself" : "Your city name"
               }
               autoFocus
             />
           </div>
-        ) : (
-          <div>
-            <h3>Thank you!</h3>
-            <p>Proceed for the next step</p>
+        </div>
+      ) : loading ? (
+        <div className="loading__msg">
+          <p>Processing submission</p>
+          <div className="dots">
+            <span className="dot">
+              <GoDotFill className="dot__icon" />
+            </span>
+            <span className="dot">
+              <GoDotFill className="dot__icon" />
+            </span>
+            <span className="dot">
+              <GoDotFill className="dot__icon" />
+            </span>
           </div>
-        )}
-      </div>
-      <button id="back__btn">
-        <img src={iconLeft} alt="left icon" className="back__arrow" />
-        <p>BACK</p>
-      </button>
+        </div>
+      ) : (
+        <div className="proceed__msg">
+          <h3>Thank you!</h3>
+          <p>Proceed for the next step</p>
+        </div>
+      )}
+      <Link to={"/"}>
+        <button id="back__btn">
+          <img src={iconLeft} alt="left icon" className="back__arrow" />
+          <img src={iconFrame} alt="left icon" className="icon__frameL" />
+          <p>BACK</p>
+        </button>
+      </Link>
+      {step === "done" && !loading ? (
+        <Link to={"/result"}>
+          <button id="proceed__btn">
+            <p>PROCEED</p>
+            <img src={iconRight} alt="right icon" className="proceed__arrow" />
+            <img src={iconFrame} alt="left icon" className="icon__frameR" />
+          </button>
+        </Link>
+      ) : (
+        <></>
+      )}
       <div className="diamond__large"></div>
       <div className="diamond__medium"></div>
       <div className="diamond__small"></div>
