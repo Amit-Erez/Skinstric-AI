@@ -1,0 +1,120 @@
+#testing {
+    height: calc(100vh - 76px);
+    position: relative;
+}
+
+.start {
+    position: absolute;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 600;
+    left: 32px;
+}
+
+.user__form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3rem;
+    z-index: 10;
+}
+
+.user__form p {
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #98a0af;
+    letter-spacing: 0.04rem;
+    font-weight: 300;
+}
+
+.input__box input {
+   width: 432px;
+   height: 69px;
+   line-height: 24px; 
+   text-align: center;
+   letter-spacing: -.07em;
+   font-size: 60px;
+   font-weight: 400;
+   border: none;
+   border-bottom: 1px solid black; 
+}
+.input__box input::placeholder {
+    color: #8e9191;
+}
+.input__box input:focus {
+    outline: none;
+}
+
+#back__btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    width: 112px;
+    height: 48px;
+    top: 790px;
+    left: 32px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.back__arrow {
+    width: 56px;
+    height: 56px;
+}
+
+.diamond__large,
+.diamond__medium,
+.diamond__small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -3rem;
+}
+
+.diamond__large {
+    Width: 538px;
+    Height: 538px;
+    border: 2px dotted #a0a4ab;
+    opacity: 25%;
+    transform: translate(-50%,-50%) rotate(80deg);
+    transform-origin: center;
+    animation: spin 50s linear infinite;
+}
+.diamond__medium {
+    width: 482px;
+    height: 482px;
+    border: 2px dotted #a0a4ab;
+    opacity: 50%;
+    transform: translate(-50%,-50%) rotate(60deg);
+    transform-origin: center;
+    animation: spin 70s linear infinite;
+}
+.diamond__small {
+   width: 426px;
+   height: 426px; 
+   border: 2px dotted #a0a4ab;
+   transform: translate(-50%,-50%) rotate(45deg);
+   transform-origin: center;
+   opacity: 80%;
+   animation: spin 85s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(405deg); 
+  }
+}
