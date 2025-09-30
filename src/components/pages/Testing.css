@@ -166,7 +166,7 @@
     opacity: 15%;
     transform: translate(-50%,-50%) rotate(80deg);
     transform-origin: center;
-    animation: spin 43s linear infinite;
+    animation: spinTest 43s linear infinite;
     animation-delay: -10s;
 }
 .diamond__medium {
@@ -176,7 +176,7 @@
     opacity: 30%;
     transform: translate(-50%,-50%) rotate(60deg);
     transform-origin: center;
-    animation: spin 63s linear infinite;
+    animation: spinTest 63s linear infinite;
     animation-delay: -20s;
 }
 .diamond__small {
@@ -186,11 +186,11 @@
    transform: translate(-50%,-50%) rotate(45deg);
    transform-origin: center;
    opacity: 40%;
-   animation: spin 85s linear infinite;
+   animation: spinTest 85s linear infinite;
    animation-delay: -35s;
 }
 
-@keyframes spin {
+@keyframes spinTest {
   from {
     transform: translate(-50%, -50%) rotate(45deg);
   }
@@ -308,6 +308,7 @@ RESPONSIVENESS
 /* MAX 640PX */
 
 @media (max-width: 640px) {
+
 .icon__frameL,
 .icon__frameR {
 display: block;
