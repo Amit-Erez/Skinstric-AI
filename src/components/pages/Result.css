@@ -137,6 +137,22 @@
   }
 }
 
+.preview__box {
+  position: absolute;
+  top: 1.4rem;
+  right: 3rem;
+  z-index: 20; /* above other elements */
+}
+
+.preview__img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+}
+
+
 /* 
 
 RESPONSIVENESS
@@ -227,8 +243,5 @@ RESPONSIVENESS
 @media (max-width: 768px) {
     .result__container{
       transform: translateY(-10%);
-    }
-    #back__btn {
-        /* transform: translateY(30%); */
     }
 }

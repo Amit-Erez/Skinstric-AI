@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./Result.css";
 import smallDmnd from "../../assets/Rectangle 2779.svg";
 import medDmnd from "../../assets/Rectangle 2780.svg";
@@ -7,11 +7,14 @@ import camera from "../../assets/camera.svg";
 import camline from "../../assets/CamLine.svg";
 import gallery from "../../assets/gallery.svg";
 import iconLeft from "../../assets/buttin-icon-left.svg";
-import iconFrame from "../../assets/rect-outer-line.svg"
+import iconFrame from "../../assets/rect-outer-line.svg";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Result = () => {
   const fileInputRef = useRef(null);
+  const [preview, setPreview] = useState(null);
+  // const [base64, setBase64] = useState(null);
 
   const handleImageClick = () => {
     fileInputRef.current.click();
@@ -19,11 +22,37 @@ const Result = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    console.log("File chosen:", file);
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setPreview(url);
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const base64Data = reader.result;
+      gallerySend(base64Data);
+    };
+    reader.readAsDataURL(file);
+    
+    }
   };
+
+  async function gallerySend(imageBase64) {
+    try {
+      const response = await axios.post("https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo", { image: imageBase64 })
+      console.log("Full API Response:", response.data);
+    } catch {
+      console.error("Error sending photo");
+    }
+  }
 
   return (
     <section id="result">
+      {preview && (
+        <div className="preview__box">
+          <p>Preview</p>
+          <img src={preview} alt="Preview" className="preview__img" />
+        </div>
+      )}
       <div className="to__start">
         <p>TO START ANALYSIS</p>
       </div>
