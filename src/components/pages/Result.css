@@ -141,7 +141,7 @@
   position: absolute;
   top: 1.4rem;
   right: 3rem;
-  z-index: 20; /* above other elements */
+  z-index: 20; 
 }
 
 .preview__img {

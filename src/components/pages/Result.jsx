@@ -14,7 +14,6 @@ import axios from "axios";
 const Result = () => {
   const fileInputRef = useRef(null);
   const [preview, setPreview] = useState(null);
-  // const [base64, setBase64] = useState(null);
 
   const handleImageClick = () => {
     fileInputRef.current.click();
