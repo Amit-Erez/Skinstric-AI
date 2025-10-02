@@ -48,7 +48,7 @@ const Result = () => {
         console.log("Full API Response:", response.data);
         alert("Image analyzed successfully!");
         window.location.href = "/select";
-      }, 3000);
+      }, 600);
     } catch {
       console.error("Error sending photo");
     }
