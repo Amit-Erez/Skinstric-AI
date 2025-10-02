@@ -8,12 +8,14 @@ import camline from "../../assets/CamLine.svg";
 import gallery from "../../assets/gallery.svg";
 import iconLeft from "../../assets/buttin-icon-left.svg";
 import iconFrame from "../../assets/rect-outer-line.svg";
+import { GoDotFill } from "react-icons/go";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Result = () => {
   const fileInputRef = useRef(null);
   const [preview, setPreview] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleImageClick = () => {
     fileInputRef.current.click();
@@ -25,23 +27,32 @@ const Result = () => {
       const url = URL.createObjectURL(file);
       setPreview(url);
 
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      const base64Data = reader.result;
-      gallerySend(base64Data);
-    };
-    reader.readAsDataURL(file);
-    
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64Data = reader.result;
+        gallerySend(base64Data);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
   async function gallerySend(imageBase64) {
     try {
-      const response = await axios.post("https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo", { image: imageBase64 })
-      console.log("Full API Response:", response.data);
+      setLoading(true);
+      const response = await axios.post(
+        "https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo",
+        { image: imageBase64 }
+      );
+      setTimeout(() => {
+        setLoading(false)
+        console.log("Full API Response:", response.data);
+        alert("Image analyzed successfully!");
+        window.location.href = "/select";
+      }, 3000);
     } catch {
       console.error("Error sending photo");
     }
+    
   }
 
   return (
@@ -56,46 +67,70 @@ const Result = () => {
         <p>TO START ANALYSIS</p>
       </div>
       <div className="result__container">
-        <div className="leftBox">
-          <img src={camera} alt="take photo" className="camera__icon" />
-          <img src={smallDmnd} alt="" className="dmnd small__dmnd" />
-          <img src={medDmnd} alt="" className="dmnd med__dmnd" />
-          <img src={lrgDmnd} alt="" className="dmnd lrg__dmnd" />
-          <img src={camline} alt="" className="camline" />
-          <div className="cam__text">
-            <p>
-              allow A.I.
-              <br />
-              to scan your face
-            </p>
+        {loading ? (
+          <div className="loading__box">
+            <div className="preparing__msg">
+              <p>Preparing your analysis</p>
+              <div className="dots">
+                <span className="dot">
+                  <GoDotFill className="dot__icon" />
+                </span>
+                <span className="dot">
+                  <GoDotFill className="dot__icon" />
+                </span>
+                <span className="dot">
+                  <GoDotFill className="dot__icon" />
+                </span>
+              </div>
+            </div>
+              <img src={smallDmnd} alt="" className="dmnd small__dmnd" />
+              <img src={medDmnd} alt="" className="dmnd med__dmnd" />
+              <img src={lrgDmnd} alt="" className="dmnd lrg__dmnd" />
           </div>
-        </div>
-        <div className="rightBox">
-          <img
-            src={gallery}
-            alt="Upload"
-            onClick={handleImageClick}
-            className="gallery__icon"
-          />
-          <input
-            type="file"
-            accept="image/*"
-            ref={fileInputRef}
-            style={{ display: "none" }}
-            onChange={handleFileChange}
-          />
-          <img src={smallDmnd} alt="" className="dmnd small__dmndR" />
-          <img src={medDmnd} alt="" className="dmnd med__dmndR" />
-          <img src={lrgDmnd} alt="" className="dmnd lrg__dmndR" />
-          <img src={camline} alt="" className="camlineR" />
-          <div className="gal__text">
-            <p>
-              allow A.I.
-              <br />
-              access gallery
-            </p>
-          </div>
-        </div>
+        ) : (
+          <>
+            <div className="leftBox">
+              <img src={camera} alt="take photo" className="camera__icon" />
+              <img src={smallDmnd} alt="" className="dmnd small__dmnd" />
+              <img src={medDmnd} alt="" className="dmnd med__dmnd" />
+              <img src={lrgDmnd} alt="" className="dmnd lrg__dmnd" />
+              <img src={camline} alt="" className="camline" />
+              <div className="cam__text">
+                <p>
+                  allow A.I.
+                  <br />
+                  to scan your face
+                </p>
+              </div>
+            </div>
+            <div className="rightBox">
+              <img
+                src={gallery}
+                alt="Upload"
+                onClick={handleImageClick}
+                className="gallery__icon"
+              />
+              <input
+                type="file"
+                accept="image/*"
+                ref={fileInputRef}
+                style={{ display: "none" }}
+                onChange={handleFileChange}
+              />
+              <img src={smallDmnd} alt="" className="dmnd small__dmndR" />
+              <img src={medDmnd} alt="" className="dmnd med__dmndR" />
+              <img src={lrgDmnd} alt="" className="dmnd lrg__dmndR" />
+              <img src={camline} alt="" className="camlineR" />
+              <div className="gal__text">
+                <p>
+                  allow A.I.
+                  <br />
+                  access gallery
+                </p>
+              </div>
+            </div>
+          </>
+        )}
       </div>
       <Link to={"/testing"}>
         <button id="back__btn">

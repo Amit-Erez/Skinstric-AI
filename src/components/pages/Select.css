@@ -1,0 +1,147 @@
+#select {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.selDmnd {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 300ms ease-in-out;
+}
+
+.selDmndLrg {
+  opacity: 0;
+  width: 300px;
+  height: 300px;
+}
+
+.selDmndLrg.hover {
+  width: 764px;
+  height: 764px;
+  opacity: 1;
+}
+
+.selDmndMed {
+  opacity: 0;
+  width: 420px;
+  height: 420px;
+}
+
+.selDmndMed.hover {
+  opacity: 1;
+  width: 684px;
+  height: 684px;
+}
+
+.selDmndSml {
+  opacity: 0;
+  width: 420px;
+  height: 420px;
+}
+
+.selDmndSml.hover {
+  opacity: 1;
+  width: 604px;
+  height: 604px;
+}
+
+.select__container {
+  position: fixed;
+  width: 342px;
+  height: 342px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gridBox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell p {
+  position: absolute;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: -0.4px;
+  z-index: 1;
+}
+
+.skin p {
+  width: 160px;
+}
+
+.demographics {
+  grid-column: 2;
+  grid-row: 1;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.cosmetic {
+  grid-column: 1;
+  grid-row: 2;
+  cursor: not-allowed;
+}
+.skin {
+  grid-column: 3;
+  grid-row: 2;
+  cursor: not-allowed;
+}
+.weather {
+  grid-column: 2;
+  grid-row: 3;
+  cursor: not-allowed;
+}
+
+.gridDmndDark,
+.gridDmndLight {
+  position: absolute;
+  z-index: 0;
+  overflow: visible;
+  width: 153.88px;
+  height: 153.88px;
+  background-color: #e1e1e2;
+  rotate: 45deg;
+  transition: all 300ms ease-in-out;
+}
+
+.gridDmndLight {
+  background-color: #f3f3f4;
+}
+
+.demographics:hover {
+  scale: 1.05;
+}
+.demographics:hover .gridDmndDark {
+  background-color: oklch(87.2% 0.01 258.338);
+}
+.demographics:hover .selDmndSml {
+  opacity: 1;
+}
+
+.cosmetic:hover .gridDmndLight,
+.skin:hover .gridDmndLight,
+.weather:hover .gridDmndLight {
+  background-color: oklch(87.2% 0.01 258.338);
+}
