@@ -1,13 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import iconLeft from "../../assets/buttin-icon-left.svg";
 import iconRight from "../../assets/buttin-icon-right.svg";
 import iconFrame from "../../assets/rect-outer-line.svg";
-import radioButton from "../../assets/radio-button.svg";
-import Categories from "../Categories";
-import Circular from "../Circular";
+import Grid from "../Grid";
+
 import "./Summary.css";
 
 const Summary = () => {
@@ -21,47 +19,7 @@ const Summary = () => {
           <h4>Predicted Race & Age</h4>
         </div>
         <div className="grid__margin-top"></div>
-        <div className="chart__grid">
-           <Categories /> 
-           <Circular />
-          
-          <div className="ctg__info">
-            <div className="ctg__info--container">
-              <div className="ctg__info--title">
-                <h4>Race</h4>
-                <h4>A.I. Confidence</h4>
-              </div>
-              <div className="ctg__info--percentage">
-                <div className="left__title">
-                  <img src={radioButton} alt="" />
-                  <span>Middle eastern</span>
-                </div>
-                <span className="value">65%</span>
-              </div>
-              <div className="ctg__info--percentage">
-                <div className="left__title">
-                  <img src={radioButton} alt="" />
-                  <span>Middle eastern</span>
-                </div>
-                <span className="value">65%</span>
-              </div>
-              <div className="ctg__info--percentage">
-                <div className="left__title">
-                  <img src={radioButton} alt="" />
-                  <span>Middle eastern</span>
-                </div>
-                <span className="value">65%</span>
-              </div>
-              <div className="ctg__info--percentage">
-                <div className="left__title">
-                  <img src={radioButton} alt="" />
-                  <span>Middle eastern</span>
-                </div>
-                <span className="value">65%</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Grid />
         <div className="sum__footer">
           <Link to={"/select"}>
             <button id="back__btn--sum">

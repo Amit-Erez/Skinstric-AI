@@ -67,9 +67,27 @@
     line-height: 24px;
 }
 
+.ctg.active {
+  background-color: #1A1B1C;
+  color: white;
+}
+
+.ctg.active h4 {
+    color: white;
+}
+
+.ctg.active p {
+    color: white;
+}
+
+
+.ctg__info--percentage {
+    background-color: #f3f3f4;;
+}
+
 .ctg:hover,
 .ctg__info--percentage:hover {
-    background-color: #E1E1E2;
+    filter: brightness(0.9);
     cursor: pointer;
 }
 
@@ -155,18 +173,29 @@
     justify-content: space-between;
 }
 
+.ctg__info--percentage.selected,
+.ctg__info--percentage.selected span,
+.ctg__info--percentage.selected 
+.left__title span, 
+.ctg__info--percentage.selected 
+.left__title img{
+  background-color: #1A1B1C;
+  color: white;
+}
+
 .left__title { 
    display: flex;
    align-items: center;
-   justify-content: space-between;
-   width: 127px;
+   width: 140px;
    font-weight: 400;
    line-height: 24px;
    letter-spacing: -0.4px;
+   text-transform: capitalize;
 }
 
 .left__title img {
     margin-right: 8px;
+    color: #1A1B1C;
 }
 
 .value {
