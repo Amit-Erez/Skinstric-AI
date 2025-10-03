@@ -43,12 +43,14 @@ const Result = () => {
         "https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseTwo",
         { image: imageBase64 }
       );
+      const object = response.data
       setTimeout(() => {
         setLoading(false)
-        console.log("Full API Response:", response.data);
+        console.log("Full API Response:", object);
+        localStorage.setItem("analysis", JSON.stringify(object));
         alert("Image analyzed successfully!");
         window.location.href = "/select";
-      }, 600);
+      }, 300);
     } catch {
       console.error("Error sending photo");
     }

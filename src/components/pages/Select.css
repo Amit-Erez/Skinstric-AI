@@ -8,6 +8,26 @@
   overflow: hidden;
 }
 
+.select__title {
+  position: absolute;
+  height: 76px;
+  top: 0px;
+  left: 2.2rem;
+  text-transform: uppercase;
+  line-height: 24px;
+}
+
+.select__title h1 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.select__title p {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
 .selDmnd {
   position: absolute;
   top: 50%;
@@ -56,7 +76,7 @@
   position: fixed;
   width: 342px;
   height: 342px;
-  top: 50%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -121,7 +141,7 @@
   overflow: visible;
   width: 153.88px;
   height: 153.88px;
-  background-color: #e1e1e2;
+  background-color: #e5e7eb;
   rotate: 45deg;
   transition: all 300ms ease-in-out;
 }
@@ -144,4 +164,18 @@
 .skin:hover .gridDmndLight,
 .weather:hover .gridDmndLight {
   background-color: oklch(87.2% 0.01 258.338);
+}
+
+.summary__btn--mobile-p {
+    display: none;
+  }
+
+
+@media (max-width: 640px) {
+  .summary__btn--desktop-p {
+    display: none;
+  }
+  .summary__btn--mobile-p {
+    display: block;
+  }
 }

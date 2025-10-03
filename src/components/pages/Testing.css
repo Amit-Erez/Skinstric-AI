@@ -1,96 +1,96 @@
 #testing {
-    height: calc(100vh - 76px);
-    position: relative;
-    overflow: hidden;
+  height: calc(100vh - 76px);
+  position: relative;
+  overflow: hidden;
 }
 
 .start {
-    position: absolute;
-    font-size: 12px;
-    line-height: 24px;
-    font-weight: 600;
-    left: 32px;
+  position: absolute;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 600;
+  left: 32px;
 }
 
 .user__form {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: -3rem;
-    z-index: 10;
-    background: transparent;
-    text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -3rem;
+  z-index: 10;
+  background: transparent;
+  text-align: center;
 }
 
 .prompt {
-    font-size: 0.88rem;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    color: #98a0af;
-    letter-spacing: 0.04rem;
-    font-weight: 300;
-    background: transparent;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  color: #98a0af;
+  letter-spacing: 0.04rem;
+  font-weight: 300;
+  background: transparent;
 }
 
 .input__box input {
-   width: 432px;
-   height: 69px;
-   line-height: 24px; 
-   text-align: center;
-   letter-spacing: -.07em;
-   font-size: 60px;
-   font-weight: 400;
-   border: none;
-   border-bottom: 1px solid black; 
-   z-index: 10;
-   background: transparent;
+  width: 432px;
+  height: 69px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: -0.07em;
+  font-size: 60px;
+  font-weight: 400;
+  border: none;
+  border-bottom: 1px solid black;
+  z-index: 10;
+  background: transparent;
 }
 .input__box input::placeholder {
-    color: #8e9191;
+  color: #8e9191;
 }
 .input__box input:focus {
-    outline: none;
+  outline: none;
 }
 
 .err__msg {
-    font-size: 14px;
-    font-weight: 300;
-    color: red;
-    margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  color: red;
+  margin-bottom: 8px;
 }
 
 #back__btn {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: transparent;
-    width: 112px;
-    height: 48px;
-    left: 3rem;  
-    bottom: 2rem;  
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: all 300ms ease;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  width: 112px;
+  height: 48px;
+  left: 3rem;
+  bottom: 2rem;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 300ms ease;
 }
 
-#back__btn:hover .back__arrow{
-    scale: 1.1; 
+#back__btn:hover .back__arrow {
+  scale: 1.1;
 }
 
-.back__arrow, 
+.back__arrow,
 .icon__frameL,
 .icon__frameR {
-    width: 56px;
-    height: 56px;
-    transition: all 300ms ease;
+  width: 56px;
+  height: 56px;
+  transition: all 300ms ease;
 }
 
 .icon__frameL,
@@ -98,96 +98,100 @@
   display: none;
 }
 
-#proceed__btn {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: transparent;
-    width: 132px;
-    height: 48px;
-    right: 3rem;  
-    bottom: 2rem;  
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: all 300ms ease;
-    animation: slide 1.5s ease-in-out;
+#proceed__btn,
+#summary__btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  width: 132px;
+  height: 48px;
+  right: 3rem;
+  bottom: 2rem;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 300ms ease;
+  animation: slide 1.5s ease-in-out;
+}
+
+#summary__btn {
+  width: 168px;
 }
 
 @keyframes slide {
- 0% {
-    transform: translateX(-300px); 
+  0% {
+    transform: translateX(-300px);
     opacity: 0;
   }
   70% {
-    transform: translateX(0);  
+    transform: translateX(0);
     opacity: 1;
   }
   85% {
-    transform: translateY(30%); 
+    transform: translateY(30%);
   }
   100% {
-    transform: translateY(0); 
+    transform: translateY(0);
   }
 }
 
-
-#proceed__btn:hover .proceed__arrow {
-    scale: 1.1; 
+#proceed__btn:hover .proceed__arrow,
+#summary__btn:hover .proceed__arrow {
+  scale: 1.1;
 }
 
 #proceed__btn p {
-    margin-right: 19px;
+  margin-right: 19px;
 }
 
 .proceed__arrow {
-    width: 56px;
-    height: 56px;
-    transition: all 300ms ease;   
+  width: 56px;
+  height: 56px;
+  transition: all 300ms ease;
 }
-
 
 .diamond__large,
 .diamond__medium,
 .diamond__small {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -3rem;
-    z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -3rem;
+  z-index: 1;
 }
 
 .diamond__large {
-    Width: 538px;
-    Height: 538px;
-    border: 2px dotted #a0a4ab;
-    opacity: 15%;
-    transform: translate(-50%,-50%) rotate(80deg);
-    transform-origin: center;
-    animation: spinTest 43s linear infinite;
-    animation-delay: -10s;
+  width: 538px;
+  height: 538px;
+  border: 2px dotted #a0a4ab;
+  opacity: 15%;
+  transform: translate(-50%, -50%) rotate(80deg);
+  transform-origin: center;
+  animation: spinTest 43s linear infinite;
+  animation-delay: -10s;
 }
 .diamond__medium {
-    width: 482px;
-    height: 482px;
-    border: 2px dotted #a0a4ab;
-    opacity: 30%;
-    transform: translate(-50%,-50%) rotate(60deg);
-    transform-origin: center;
-    animation: spinTest 63s linear infinite;
-    animation-delay: -20s;
+  width: 482px;
+  height: 482px;
+  border: 2px dotted #a0a4ab;
+  opacity: 30%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  transform-origin: center;
+  animation: spinTest 63s linear infinite;
+  animation-delay: -20s;
 }
 .diamond__small {
-   width: 426px;
-   height: 426px; 
-   border: 2px dotted #a0a4ab;
-   transform: translate(-50%,-50%) rotate(45deg);
-   transform-origin: center;
-   opacity: 40%;
-   animation: spinTest 85s linear infinite;
-   animation-delay: -35s;
+  width: 426px;
+  height: 426px;
+  border: 2px dotted #a0a4ab;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transform-origin: center;
+  opacity: 40%;
+  animation: spinTest 85s linear infinite;
+  animation-delay: -35s;
 }
 
 @keyframes spinTest {
@@ -195,56 +199,55 @@
     transform: translate(-50%, -50%) rotate(45deg);
   }
   to {
-    transform: translate(-50%, -50%) rotate(405deg); 
+    transform: translate(-50%, -50%) rotate(405deg);
   }
 }
 
 .proceed__msg,
 .loading__msg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    margin: -3rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    z-index: 2;
-    
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: -3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 2;
 }
 .proceed__msg h3 {
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: 0.6px;
-    line-height: 32px;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  line-height: 32px;
 }
 
 .proceed__msg p,
 .loading__msg p {
-    font-size: 18px;
-    text-transform: none;
-    color: #495565;
-    font-weight: 400;
-    text-align: center;
+  font-size: 18px;
+  text-transform: none;
+  color: #495565;
+  font-weight: 400;
+  text-align: center;
 }
 
 .dots {
-    margin-top: 1rem;
-    width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  margin-top: 1rem;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .dot {
-    height: 16px;
+  height: 16px;
 }
 
 .dot__icon {
-    font-size: 18px;
-    fill: #a0a4ab;
-    animation: bounce 1s ease-in-out infinite;
+  font-size: 18px;
+  fill: #a0a4ab;
+  animation: bounce 1s ease-in-out infinite;
 }
 
 .dot:nth-child(1) .dot__icon {
@@ -258,14 +261,15 @@
 }
 
 @keyframes bounce {
-  0%, 80%, 100% {
+  0%,
+  80%,
+  100% {
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-4px); 
+    transform: translateY(-4px);
   }
 }
-
 
 /* 
 
@@ -273,75 +277,82 @@ RESPONSIVENESS
 
 */
 
-
 /* MAX 768PX */
 
 @media (max-width: 768px) {
-.diamond__small {
-  opacity: 30%;
-  width: 226px;
-  height: 226px;
-  margin-top: -4rem;
-}
-.diamond__medium {
-  opacity: 22%;
-  width: 283px;
-  height: 283px;
-  margin-top: -4rem;
-}
-.diamond__large {
-  opacity: 10%;  
-  width: 339px;
-  height: 339px;
-  margin-top: -4rem;
-}
-#back__btn{
+  .diamond__small {
+    opacity: 30%;
+    width: 226px;
+    height: 226px;
+    margin-top: -4rem;
+  }
+  .diamond__medium {
+    opacity: 22%;
+    width: 283px;
+    height: 283px;
+    margin-top: -4rem;
+  }
+  .diamond__large {
+    opacity: 10%;
+    width: 339px;
+    height: 339px;
+    margin-top: -4rem;
+  }
+  #back__btn {
     left: 3rem;
     bottom: 9rem;
-}
-#proceed__btn{
+  }
+  #proceed__btn,
+  #summary__btn {
     right: 3rem;
     bottom: 9rem;
-}
+  }
 }
 
 /* MAX 640PX */
 
 @media (max-width: 640px) {
+  .icon__frameL,
+  .icon__frameR {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 
-.icon__frameL,
-.icon__frameR {
-display: block;
-width: 100%;
-height: 100%;
-}
-
-.back__arrow,
-.proceed__arrow {
+  .back__arrow,
+  .proceed__arrow {
     display: none;
-}
+  }
 
-#back__btn,
-#proceed__btn {
+  #back__btn,
+  #proceed__btn,
+  #summary__btn {
     width: 70px;
     height: 70px;
-}
+  }
 
-#back__btn p {
-   position: absolute; 
-   left: 1.1rem;
-   transform: translate();
-   font-size: 0.8rem;
-}
+  #back__btn p {
+    position: absolute;
+    left: 1.1rem;
+    transform: translate();
+    font-size: 0.8rem;
+  }
 
-#proceed__btn p {
-   position: absolute;  
-   font-size: 0.77rem;
-   left: .4rem;
-}
+  #proceed__btn p,
+  #summary__btn p {
+    position: absolute;
+    font-size: 0.77rem;
+    left: 0.4rem;
+  }
 
-.input__box input {
+  #summary__btn p {
+    position: absolute;
+    font-size: 0.9rem;
+    left: 1.1rem;
+  }
+
+  .input__box input {
     font-size: 48px;
     width: 372px;
-}
+  }
 }
