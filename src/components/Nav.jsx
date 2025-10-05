@@ -1,11 +1,14 @@
 import React from 'react'
 import './Nav.css'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Intro from "../assets/Intro.svg"
 
 const Nav = () => {
+  const location = useLocation();
+  const isSummary = location.pathname === "/summary";
+
   return (
-    <header>
+    <header className={isSummary ? "nav nav--summary" : "nav"}>
         <div className="container">
            <div className="left__nav">
                 <Link to={"/"}>

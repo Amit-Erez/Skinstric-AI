@@ -23,8 +23,7 @@ const Summary = () => {
         <div className="sum__footer">
           <Link to={"/select"}>
             <button id="back__btn--sum">
-              <img src={iconLeft} alt="left icon" className="back__arrow" />
-              <img src={iconFrame} alt="left icon" className="icon__frameL" />
+              <img src={iconLeft} alt="left icon" className="back__arrow sum" />
               <p>BACK</p>
             </button>
           </Link>
@@ -37,14 +36,12 @@ const Summary = () => {
               <img
                 src={iconRight}
                 alt="right icon"
-                className="proceed__arrow home"
+                className="proceed__arrow--home"
               />
-              <img src={iconFrame} alt="left icon" className="icon__frameR" />
             </button>
           </Link>
         </div>
       </div>
-      <div className="mobile__bottom-gap"></div>
     </section>
   );
 };

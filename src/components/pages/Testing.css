@@ -139,7 +139,8 @@
 }
 
 #proceed__btn:hover .proceed__arrow,
-#summary__btn:hover .proceed__arrow {
+#summary__btn:hover .proceed__arrow,
+#home__btn:hover .proceed__arrow--home {
   scale: 1.1;
 }
 
@@ -147,7 +148,8 @@
   margin-right: 19px;
 }
 
-.proceed__arrow {
+.proceed__arrow,
+.proceed__arrow--home {
   width: 56px;
   height: 56px;
   transition: all 300ms ease;
@@ -326,15 +328,12 @@ RESPONSIVENESS
 
   #back__btn,
   #proceed__btn,
-  #summary__btn, 
-  #back__btn--sum,
-  #home__btn {
+  #summary__btn {
     width: 70px;
     height: 70px;
   }
 
-  #back__btn p,
-  #back__btn--sum p {
+  #back__btn p {
     position: absolute;
     left: 1.1rem;
     font-size: 0.8rem;
@@ -347,18 +346,7 @@ RESPONSIVENESS
     left: 0.4rem;
   }
 
-  #back__btn--sum {
-    position: absolute;
-    font-size: 0.77rem;
-    left: 1rem; 
-  }
-
-  #home__btn {
-    right: 1rem
-  }
-
-  #summary__btn p,
-  #home__btn p {
+  #summary__btn p {
     position: absolute;
     font-size: 0.9rem;
     left: 1.1rem;

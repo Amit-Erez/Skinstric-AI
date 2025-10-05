@@ -1,4 +1,5 @@
 #result {
+  height: calc(100vh - 76px);
   min-height: 92vh;
   padding-top: 64px;
   padding-bottom: 120px;
