@@ -43,11 +43,11 @@ const Grid = () => {
           <p>{selected.race ? selected.race.label : topRace}</p>
           <h4>Race</h4>
         </div>
-        <div className={`ctg race__ctg ${sort === "age" ? "active" : ""}`} onClick={() => setSort("age")}>
+        <div className={`ctg age__ctg ${sort === "age" ? "active" : ""}`} onClick={() => setSort("age")}>
           <p>{selected.age ? selected.age.label : topAge}</p>
           <h4>Age</h4>
         </div>
-        <div className={`ctg race__ctg ${sort === "gender" ? "active" : ""}`} onClick={() => setSort("gender")}>
+        <div className={`ctg gender__ctg ${sort === "gender" ? "active" : ""}`} onClick={() => setSort("gender")}>
           <p>{selected.gender ? selected.gender.label : topGender}</p>
           <h4>Sex</h4>
         </div>
@@ -77,6 +77,7 @@ const Grid = () => {
             <span>%</span>
           </p>
         </div>
+        <p className="mobile__circ--para">If A.I. estimate is wrong, select the correct one.</p>
       </div>
       <div className="ctg__info">
         <div className="ctg__info--container">

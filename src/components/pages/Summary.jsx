@@ -44,6 +44,7 @@ const Summary = () => {
           </Link>
         </div>
       </div>
+      <div className="mobile__bottom-gap"></div>
     </section>
   );
 };

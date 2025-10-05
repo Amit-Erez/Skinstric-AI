@@ -326,15 +326,17 @@ RESPONSIVENESS
 
   #back__btn,
   #proceed__btn,
-  #summary__btn {
+  #summary__btn, 
+  #back__btn--sum,
+  #home__btn {
     width: 70px;
     height: 70px;
   }
 
-  #back__btn p {
+  #back__btn p,
+  #back__btn--sum p {
     position: absolute;
     left: 1.1rem;
-    transform: translate();
     font-size: 0.8rem;
   }
 
@@ -345,7 +347,18 @@ RESPONSIVENESS
     left: 0.4rem;
   }
 
-  #summary__btn p {
+  #back__btn--sum {
+    position: absolute;
+    font-size: 0.77rem;
+    left: 1rem; 
+  }
+
+  #home__btn {
+    right: 1rem
+  }
+
+  #summary__btn p,
+  #home__btn p {
     position: absolute;
     font-size: 0.9rem;
     left: 1.1rem;

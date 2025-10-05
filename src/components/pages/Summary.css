@@ -1,244 +1,334 @@
 #summary {
-    height: 90vh;
-    margin-top: 20px;
+  height: 90vh;
+  margin-top: 20px;
 }
 
 .sum__container {
-   height: 100%;
-   margin: 20px 20px 0 20px; 
-   padding: 0 16px;
+  height: 100%;
+  margin: 20px 20px 0 20px;
+  padding: 0 16px;
 }
 
 .sum__top {
-    margin-bottom: 40px;
-    text-transform: uppercase;
+  margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .sum__top h2 {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 600;
-    margin-bottom: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
 }
 
 .sum__top h3 {
-    font-size: 72px;
-    line-height: 64px;
-    font-weight: 400;
-    letter-spacing: -3.6px;
+  font-size: 72px;
+  line-height: 64px;
+  font-weight: 400;
+  letter-spacing: -3.6px;
 }
 
 .sum__top h4 {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 24px;
-    margin-top: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-top: 8px;
 }
 
 .grid__margin-top {
-    width: 100%;
-    height: 40px;
+  width: 100%;
+  height: 40px;
 }
 
 .chart__grid {
-    margin-top: 40px;
-    height: 519px;
-    display: grid;
-    grid-template-columns: 1.5fr 8.5fr 3.15fr;
-    gap: 16px;
-    width: 100%;
-    margin: 0 auto;
+  margin-top: 40px;
+  height: 519px;
+  display: grid;
+  grid-template-columns: 1.5fr 8.5fr 3.15fr;
+  gap: 16px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .ctg {
-    border-top: 1px solid black;
-    padding: 12px;
-    margin-bottom: 12px;
-    height: 99px;
-    display: flex;
-    flex: 1;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #f3f3f4;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
+  border-top: 1px solid black;
+  padding: 12px;
+  height: 99px;
+  display: flex;
+  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f3f3f4;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.race__ctg,
+.age__ctg {
+  margin-bottom: 12px;
 }
 
 .ctg.active {
-  background-color: #1A1B1C;
+  background-color: #1a1b1c;
   color: white;
 }
 
 .ctg.active h4 {
-    color: white;
+  color: white;
 }
 
 .ctg.active p {
-    color: white;
+  color: white;
 }
 
-
 .ctg__info--percentage {
-    background-color: #f3f3f4;;
+  background-color: #f3f3f4;
 }
 
 .ctg:hover,
 .ctg__info--percentage:hover {
-    filter: brightness(0.9);
-    cursor: pointer;
+  filter: brightness(0.9);
+  cursor: pointer;
 }
 
 .ctg h4 {
-    margin-bottom: 4px;
-    text-transform: uppercase;
+  margin-bottom: 4px;
+  text-transform: uppercase;
 }
 
 .ctg p {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .circular {
-    border-top: 1px solid black;
-    background-color: #f3f3f4;
-    padding: 16px;
-    position: relative;
+  border-top: 1px solid black;
+  background-color: #f3f3f4;
+  padding: 16px;
+  position: relative;
 }
 
 .circular__title {
-    position: absolute;
-    font-size: 40px;
-    top: 8px;
-    left: 20px;
-    line-height: 60px;
-    text-transform: capitalize;
+  position: absolute;
+  font-size: 40px;
+  top: 8px;
+  left: 20px;
+  line-height: 60px;
+  text-transform: capitalize;
 }
 
 .circular__container {
-    position: absolute;
-    width: 384px;
-    height: 384px;
-    right: 20px;
-    bottom: 1.5rem;
+  position: absolute;
+  width: 384px;
+  height: 384px;
+  right: 20px;
+  bottom: 1.5rem;
 }
 
 .circle {
-    position: relative;
+  position: relative;
 }
 
 .circle__value {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
 }
 
 .circle__value span {
-    position: absolute;
-    font-size: 30px;
-    line-height: 36px;
-    top: .1rem;
+  position: absolute;
+  font-size: 30px;
+  line-height: 36px;
+  top: 0.1rem;
 }
+
+ .mobile__circ--para {
+    display: none;
+ }
 
 .ctg__info {
-   border-top: 1px solid black; 
-   background-color: #f3f3f4;
-   padding: 16px 0;
+  border-top: 1px solid black;
+  background-color: #f3f3f4;
+  padding: 16px 0;
 }
 
-.ctg__info--title{
-    padding: 0 16px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-transform: uppercase;
+.ctg__info--title {
+  padding: 0 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
 }
 
 .ctg__info--title h4 {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: -0.4px
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.4px;
 }
 
 .ctg__info--percentage {
-    height: 48px;
-    padding: 0 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  height: 48px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .ctg__info--percentage.selected,
 .ctg__info--percentage.selected span,
-.ctg__info--percentage.selected 
-.left__title span, 
-.ctg__info--percentage.selected 
-.left__title img{
-  background-color: #1A1B1C;
+.ctg__info--percentage.selected .left__title span,
+.ctg__info--percentage.selected .left__title img {
+  background-color: #1a1b1c;
   color: white;
 }
 
-.left__title { 
-   display: flex;
-   align-items: center;
-   width: 140px;
-   font-weight: 400;
-   line-height: 24px;
-   letter-spacing: -0.4px;
-   text-transform: capitalize;
+.left__title {
+  display: flex;
+  align-items: center;
+  width: 140px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.4px;
+  text-transform: capitalize;
 }
 
 .left__title img {
-    margin-right: 8px;
-    color: #1A1B1C;
+  margin-right: 8px;
+  color: #1a1b1c;
 }
 
 .value {
-    letter-spacing: -0.4px;
+  letter-spacing: -0.4px;
 }
 
 .sum__footer {
-    padding-top: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  padding-top: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .sum__footer-para {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #a0a4ab;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #a0a4ab;
 }
 
 #back__btn--sum,
 #home__btn {
-    cursor: pointer;
-    width: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: none;
-    background-color: transparent;
+  cursor: pointer;
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  background-color: transparent;
 }
 #back__btn--sum p,
 #home__btn p {
-    font-size: 14px;
-    font-weight: 600;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-#back__btn--sum:hover
-.back__arrow {
- scale: 1.1;
+#back__btn--sum:hover .back__arrow {
+  scale: 1.1;
 }
 
-#home__btn:hover
-.proceed__arrow.home {
-    scale: 1.1;
+#home__btn:hover .proceed__arrow.home {
+  scale: 1.1;
 }
 
+@media (max-width: 768px) {
+  #summary {
+  height: 120vh;
+  }  
+  .sum__top {
+    margin: 0 0 16px 16px;
+  }
+  .sum__top h3 {
+    font-size: 36px;
+    letter-spacing: -1.8px;
+  }
+  .ctg {
+    height: 77px;
+  }
+  .chart__grid {
+    grid-template-columns: 1fr; /* just one column */
+    grid-template-rows: auto; /* rows adjust naturally */
+    justify-self: center;
+    height: auto;
+  }
+  .circular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 480px;
+  }
+  .circular__container {
+    position: static;
+    margin-bottom: 16px;
+  }
+
+  .circle {
+
+  }
+
+  .circle__value {
+    font-size: 30px;
+  }
+
+  .mobile__circ--para {
+    position: absolute;
+    bottom: 16px;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #a0a4ab;
+    
+  }
+  .circular__title {
+    display: none;
+    margin-bottom: 4px;
+  }
+
+  .sum__footer {
+    padding-bottom: 32px;
+  }
+
+  .sum__footer-para {
+    display: none;
+  }
+}
+
+@media (max-width:640px) {
+    .chart__grid {
+        margin: 18px;
+    }
+
+    .mobile__bottom-gap {
+        position: fixed;
+        width: 100%;
+        height: 70px;
+        background-color: white;
+    }
+    #back__btn--sum,
+    #home__btn {
+        position: fixed;
+        bottom: 2px;
+    }
+    #back__btn--sum p,
+    #home__btn p {
+       top: 50%; 
+       left: 50%;
+       transform: translate(-50%, -50%);
+    }
+}
