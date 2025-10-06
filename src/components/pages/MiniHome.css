@@ -11,6 +11,10 @@
     justify-content: center;
 }
 
+.mini__heading {
+    animation: fade 1600ms ease-in;
+}
+
 .mini__heading h1 {
     text-align: center;
     font-weight: 400;

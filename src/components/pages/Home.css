@@ -40,13 +40,25 @@
     text-align: center;
     width: 100%;
     transition: all 600ms ease-in-out;
+    animation: fade 1600ms ease-in;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  20% { 
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .main__heading h1 {
     font-size: 128px;
     line-height: 125px;
     font-weight: 400;
-    /* text-align: center; */
     letter-spacing: -.05em;
     scale: .8;
 }

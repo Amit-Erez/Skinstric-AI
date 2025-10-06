@@ -65,7 +65,7 @@ const Testing = () => {
       setLoading(true);
       setTimeout(() => {
         sendUser();
-      }, 600);
+      }, 400);
     }
   }, [user]);
 
