@@ -24,6 +24,7 @@ const Summary = () => {
           <Link to={"/select"}>
             <button id="back__btn--sum">
               <img src={iconLeft} alt="left icon" className="back__arrow sum" />
+              <img src={iconFrame} alt="" className="mobile__sum--no-arrow" />
               <p>BACK</p>
             </button>
           </Link>
@@ -38,6 +39,7 @@ const Summary = () => {
                 alt="right icon"
                 className="proceed__arrow--home"
               />
+              <img src={iconFrame} alt="" className="mobile__sum--no-arrow" />
             </button>
           </Link>
         </div>
