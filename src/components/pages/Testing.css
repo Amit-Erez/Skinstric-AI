@@ -79,6 +79,7 @@
   border: none;
   cursor: pointer;
   transition: all 300ms ease;
+  z-index: 2000;
 }
 
 #back__btn:hover .back__arrow {
