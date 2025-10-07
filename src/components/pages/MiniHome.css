@@ -1,67 +1,94 @@
+/* =========================================================
+   MINI HOME PAGE STYLES
+   ========================================================= */
 
-
+/* --- Layout Container --- */
 .mini__container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+/* =========================================================
+   HEADING + PARAGRAPH
+   ========================================================= */
+
 .mini__heading {
-    animation: fade 1600ms ease-in;
+  animation: fade 1600ms ease-in;
 }
 
 .mini__heading h1 {
-    text-align: center;
-    font-weight: 400;
-    font-size: 60px;
-    letter-spacing: -.05em;
-    line-height: 60px;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    
+  text-align: center;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 .mini__para p {
-    text-align: center;
-    color: #1a1b1c83;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-    margin-top: 16px;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #1a1b1c83;
 }
+
+/* --- Fade In Animation --- */
+@keyframes fade {
+  0%,
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   ENTER BUTTON
+   ========================================================= */
 
 #enter__btn {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: none;
-    background-color: transparent;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 18px;
-    margin-top: 10px;
-    width: 156px;
-    transition: all 200ms ease-in-out;
-    cursor: pointer;
-}
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-.test__arrow {
-    width: 34px;
+  width: 156px;
+  margin-top: 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
 }
 
 #enter__btn:hover {
-    scale: 1.05;
+  scale: 1.05;
 }
 
+.test__arrow {
+  width: 34px;
+}
 
+/* =========================================================
+   RESPONSIVENESS
+   ========================================================= */
 
 @media (min-width: 1024px) {
-    #test {
-        visibility: hidden;
-    }
+  #test {
+    visibility: hidden;
+  }
 }

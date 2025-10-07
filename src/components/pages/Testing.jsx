@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import iconLeft from "../../assets/buttin-icon-left.svg";
 import iconRight from "../../assets/buttin-icon-right.svg";
-import iconFrame from "../../assets/rect-outer-line.svg"
+import iconFrame from "../../assets/rect-outer-line.svg";
 import { GoDotFill } from "react-icons/go";
 import "./Testing.css";
 
@@ -134,7 +134,7 @@ const Testing = () => {
           <p>BACK</p>
         </button>
       </Link>
-      {step === "done" && !loading ? (
+      {step === "done" && !loading && (
         <Link to={"/result"}>
           <button id="proceed__btn">
             <p>PROCEED</p>
@@ -142,12 +142,12 @@ const Testing = () => {
             <img src={iconFrame} alt="left icon" className="icon__frameR" />
           </button>
         </Link>
-      ) : (
-        <></>
       )}
-      <div className="diamond__large"></div>
-      <div className="diamond__medium"></div>
-      <div className="diamond__small"></div>
+      <div className="diamond__wrapper">
+        <div className="diamond__large"></div>
+        <div className="diamond__medium"></div>
+        <div className="diamond__small"></div>
+      </div>
     </section>
   );
 };

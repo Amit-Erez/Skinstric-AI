@@ -1,53 +1,75 @@
+
+ /* =========================================================
+   HOME / LANDING PAGE STYLES
+   ========================================================= */
+
+/* --- Page Container --- */
 #landing {
-    height: calc(100vh - 76px);
+  height: calc(100vh - 76px);
 }
 
+/* --- Mini Landing (mobile fallback) --- */
 #mini__landing {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: none;
 }
 
+/* --- Main Layout --- */
 .landing__wrapper {
-    position: relative;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
 }
 
+/* --- Main Container --- */
 .main__container {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
 }
+
+/* =========================================================
+   HEADING + INTRO TEXT
+   ========================================================= */
 
 .main__heading {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    transition: all 600ms ease-in-out;
-    animation: fade 1600ms ease-in;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  transition: all 600ms ease-in-out;
+  animation: fade 1600ms ease-in;
 }
 
+.main__heading h1 {
+  font-size: 128px;
+  line-height: 125px;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  scale: 0.8;
+}
+
+/* --- Fade In Animation --- */
 @keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  20% { 
+  0%,
+  20% {
     opacity: 0;
   }
   100% {
@@ -55,190 +77,195 @@
   }
 }
 
-.main__heading h1 {
-    font-size: 128px;
-    line-height: 125px;
-    font-weight: 400;
-    letter-spacing: -.05em;
-    scale: .8;
+/* --- Intro Paragraph --- */
+.landing__para {
+  position: absolute;
+  top: 86%;
+  left: 3%;
+
+  width: 316px;
+  height: 72px;
+
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 20px;
 }
 
-.landing__para {
-    position: absolute;
-    width: 316px;
-    height: 72px;
-    top: 86%;
-    left: 3%;
-    text-transform: uppercase;
-    font-size: 14px;
-    line-height: 20px;
+/* =========================================================
+   LEFT + RIGHT SECTIONS
+   ========================================================= */
+
+#left__section,
+#right__section {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  transition: all 500ms ease-in-out;
 }
 
 #left__section {
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    top: 50%;
-    transform: translate(-55%, -50%);
-    transition: all 500ms ease-in-out;
+  transform: translate(-55%, -50%);
 }
 
 #right__section {
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    top: 50%;
-    right: 0;
-    transform: translate(55%, -50%);
-    opacity: 1;
-    transition: all 500ms ease-in-out;
+  right: 0;
+  transform: translate(55%, -50%);
+  opacity: 1;
 }
 
+/* --- Relative Containers --- */
 .relative__left,
 .relative__right {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.left__box, 
+/* --- Framed Boxes --- */
+.left__box,
 .right__box {
-    width: 100%;
-    height: 100%;
-    border: 1px dashed #A0A4AB;
-    rotate: 45deg;
+  width: 100%;
+  height: 100%;
+  border: 1px dashed #a0a4ab;
+  rotate: 45deg;
+}
+
+/* =========================================================
+   BUTTONS (Discover / Test)
+   ========================================================= */
+
+#discover__btn,
+#test__btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  height: 44px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
 }
 
 #discover__btn {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: transparent;
-    width: 150px;
-    height: 44px;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-}
-
-#discover__btn:hover .discover__arrow {
-   scale: 1.2;
+  width: 150px;
+  right: 0;
 }
 
 #test__btn {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: transparent;
-    width: 126px;
-    height: 44px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
+  width: 126px;
+}
+
+#discover__btn:hover .discover__arrow {
+  scale: 1.2;
 }
 
 #test__btn:hover .test__arrow {
-   scale: 1.2; 
+  scale: 1.2;
 }
 
-.main__heading.moveright {
-    transform: translateX(25%); 
-}
-.main__heading.moveleft {
-    transform: translateX(-25%); 
-}
-
-.skincare {
-    display: block;
-    width: 730px;
-    transition: all 600ms ease-in-out;
-}
-
-.skincare.moveright {
-    transform: translateX(18%);
-}
-
-.skincare.moveleft {
-    transform: translateX(-18%);
-}
-
-#right__section.moveright {
-    opacity: 0;
-    visibility: hidden;
-}
-#left__section.moveleft {
-    opacity: 0;
-    visibility: hidden;
+.discover__arrow,
+.test__arrow {
+  width: 44px;
+  height: 44px;
+  transition: all 300ms ease;
 }
 
 .discover__arrow {
-    width: 44px;
-    height: 44px;
-    margin-right: 12px;
-    transition: all 300ms ease;
+  margin-right: 12px;
 }
 
-.test__arrow {
-    width: 44px;
-    height: 44px;
-    transition: all 300ms ease;
+/* =========================================================
+   MOVEMENT ANIMATIONS (Heading + Skincare Frames)
+   ========================================================= */
+
+.main__heading.moveright {
+  transform: translateX(25%);
 }
 
-.inner__border, 
+.main__heading.moveleft {
+  transform: translateX(-25%);
+}
+
+.skincare {
+  display: block;
+  width: 730px;
+  transition: all 600ms ease-in-out;
+}
+
+.skincare.moveright {
+  transform: translateX(18%);
+}
+
+.skincare.moveleft {
+  transform: translateX(-18%);
+}
+
+#right__section.moveright,
+#left__section.moveleft {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* =========================================================
+   INNER + OUTER BORDERS
+   ========================================================= */
+
+.inner__border,
 .outer__border {
-    position: absolute;
-    border: 1px dotted #1a1b1c83;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px dotted #1a1b1c83;
 }
 
 .miniborders {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-52%, -50%) rotate(45deg);
-    transform-origin: center;
-    width: 420px;
-    height: 420px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 420px;
+  height: 420px;
+  transform: translate(-52%, -50%) rotate(45deg);
+  transform-origin: center;
 }
 
 .inner__border {
-    width: 350px;
-    height: 350px;
+  width: 350px;
+  height: 350px;
 }
 
 .outer__border {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
+/* =========================================================
+   RESPONSIVENESS
+   ========================================================= */
+
+/* --- Tablets & below (1024px) --- */
 @media (max-width: 1024px) {
-    .main__container,
-    .landing__para,
-    #left__section,
-    #right__section {
-        display: none;
-    }
+  .main__container,
+  .landing__para,
+  #left__section,
+  #right__section {
+    display: none;
+  }
 
-    #mini__landing {
-        display: block;
-    }
+  #mini__landing {
+    display: block;
+  }
 }
 
+/* --- Phones (640px) --- */
 @media (max-width: 640px) {
-    #mini__landing {
-        scale: .75;
-        margin: 1rem auto 8rem auto;
-    }
+  #mini__landing {
+    scale: 0.75;
+    margin: 1rem auto 8rem auto;
+  }
 }
-
 

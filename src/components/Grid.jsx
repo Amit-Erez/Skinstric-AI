@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import radioButton from "../assets/radio-button.svg";
 import radioButtonSel from "../assets/radio-button-selected.svg";
-import "./Grid.css";
+
+/* ===============================
+   For Grid CSS - See Summary.css
+   =============================== */
 
 const Grid = () => {
   const [sort, setSort] = useState("race");
@@ -39,15 +42,24 @@ const Grid = () => {
   return (
     <div className="chart__grid">
       <div className="categories">
-        <div className={`ctg race__ctg ${sort === "race" ? "active" : ""}`} onClick={() => setSort("race")}>
+        <div
+          className={`ctg race__ctg ${sort === "race" ? "active" : ""}`}
+          onClick={() => setSort("race")}
+        >
           <p>{selected.race ? selected.race.label : topRace}</p>
           <h4>Race</h4>
         </div>
-        <div className={`ctg age__ctg ${sort === "age" ? "active" : ""}`} onClick={() => setSort("age")}>
+        <div
+          className={`ctg age__ctg ${sort === "age" ? "active" : ""}`}
+          onClick={() => setSort("age")}
+        >
           <p>{selected.age ? selected.age.label : topAge}</p>
           <h4>Age</h4>
         </div>
-        <div className={`ctg gender__ctg ${sort === "gender" ? "active" : ""}`} onClick={() => setSort("gender")}>
+        <div
+          className={`ctg gender__ctg ${sort === "gender" ? "active" : ""}`}
+          onClick={() => setSort("gender")}
+        >
           <p>{selected.gender ? selected.gender.label : topGender}</p>
           <h4>Sex</h4>
         </div>
@@ -77,7 +89,9 @@ const Grid = () => {
             <span>%</span>
           </p>
         </div>
-        <p className="mobile__circ--para">If A.I. estimate is wrong, select the correct one.</p>
+        <p className="mobile__circ--para">
+          If A.I. estimate is wrong, select the correct one.
+        </p>
       </div>
       <div className="ctg__info">
         <div className="ctg__info--container">
@@ -85,31 +99,30 @@ const Grid = () => {
             <h4>Race</h4>
             <h4>A.I. Confidence</h4>
           </div>
-          {sortArray &&
-            sortArray.map(([label, value]) => (
-              <div
-                className={`ctg__info--percentage ${
-                  current?.label === label ? "selected" : ""
-                }`}
-                key={label}
-                onClick={() =>
-                  setSelected((prev) => ({
-                    ...prev,
-                    [sort]: { label, value },
-                  }))
-                }
-              >
-                <div className="left__title">
-                  {current?.label === label ? (
-                    <img src={radioButtonSel} alt="" />
-                  ) : (
-                    <img src={radioButton} alt="" />
-                  )}
-                  <span>{label}</span>
-                </div>
-                <span className="value">{Math.floor(value * 100)}%</span>
+          {sortArray.map(([label, value]) => (
+            <div
+              className={`ctg__info--percentage ${
+                current?.label === label ? "selected" : ""
+              }`}
+              key={label}
+              onClick={() =>
+                setSelected((prev) => ({
+                  ...prev,
+                  [sort]: { label, value },
+                }))
+              }
+            >
+              <div className="left__title">
+                {current?.label === label ? (
+                  <img src={radioButtonSel} alt="" />
+                ) : (
+                  <img src={radioButton} alt="" />
+                )}
+                <span>{label}</span>
               </div>
-            ))}
+              <span className="value">{Math.floor(value * 100)}%</span>
+            </div>
+          ))}
         </div>
       </div>
     </div>

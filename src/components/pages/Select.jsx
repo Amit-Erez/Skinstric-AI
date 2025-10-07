@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Select.css";
 import selDmndLrg from "../../assets/selDmndLrg.svg";
@@ -11,7 +11,6 @@ import iconFrame from "../../assets/rect-outer-line.svg";
 
 const Select = () => {
   const [hover, setHover] = useState(null);
-  const objectRef = useRef(null);
 
   return (
     <section id="select">

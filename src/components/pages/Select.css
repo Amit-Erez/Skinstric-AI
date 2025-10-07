@@ -1,3 +1,8 @@
+/* =========================================================
+   SELECT PAGE STYLES
+   ========================================================= */
+
+/* --- Layout Container --- */
 #select {
   min-height: 92vh;
   display: flex;
@@ -8,11 +13,15 @@
   overflow: hidden;
 }
 
+/* =========================================================
+   TITLE AREA
+   ========================================================= */
+
 .select__title {
   position: absolute;
-  height: 76px;
-  top: 0px;
+  top: 0;
   left: 2.2rem;
+  height: 76px;
   text-transform: uppercase;
   line-height: 24px;
 }
@@ -28,6 +37,10 @@
   margin-top: 4px;
 }
 
+/* =========================================================
+   CENTER DIAMONDS
+   ========================================================= */
+
 .selDmnd {
   position: absolute;
   top: 50%;
@@ -36,10 +49,11 @@
   transition: all 300ms ease-in-out;
 }
 
+/* --- Large Diamond --- */
 .selDmndLrg {
-  opacity: 0;
   width: 300px;
   height: 300px;
+  opacity: 0;
 }
 
 .selDmndLrg.hover {
@@ -48,37 +62,43 @@
   opacity: 1;
 }
 
+/* --- Medium Diamond --- */
 .selDmndMed {
-  opacity: 0;
   width: 420px;
   height: 420px;
+  opacity: 0;
 }
 
 .selDmndMed.hover {
-  opacity: 1;
   width: 684px;
   height: 684px;
+  opacity: 1;
 }
 
+/* --- Small Diamond --- */
 .selDmndSml {
-  opacity: 0;
   width: 420px;
   height: 420px;
+  opacity: 0;
 }
 
 .selDmndSml.hover {
-  opacity: 1;
   width: 604px;
   height: 604px;
+  opacity: 1;
 }
+
+/* =========================================================
+   GRID LAYOUT
+   ========================================================= */
 
 .select__container {
   position: fixed;
-  width: 342px;
-  height: 342px;
   top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 342px;
+  height: 342px;
 }
 
 .gridBox {
@@ -90,6 +110,10 @@
   position: relative;
 }
 
+/* =========================================================
+   GRID CELLS
+   ========================================================= */
+
 .cell {
   position: relative;
   display: flex;
@@ -100,11 +124,10 @@
 
 .cell p {
   position: absolute;
-  z-index: 1;
-  font-size: 16px;
-  font-weight: bold;
   text-align: center;
   letter-spacing: -0.4px;
+  font-size: 16px;
+  font-weight: bold;
   z-index: 1;
 }
 
@@ -112,50 +135,69 @@
   width: 160px;
 }
 
+/* =========================================================
+   GRID ELEMENTS (Interactive)
+   ========================================================= */
+
+.demographics,
+.cosmetic,
+.skin,
+.weather {
+  transition: all 300ms ease-in-out;
+}
+
 .demographics {
   grid-column: 2;
   grid-row: 1;
   cursor: pointer;
-  transition: all 300ms ease-in-out;
 }
+
 .cosmetic {
   grid-column: 1;
   grid-row: 2;
   cursor: not-allowed;
 }
+
 .skin {
   grid-column: 3;
   grid-row: 2;
   cursor: not-allowed;
 }
+
 .weather {
   grid-column: 2;
   grid-row: 3;
   cursor: not-allowed;
 }
 
+/* --- Diamond Elements --- */
 .gridDmndDark,
 .gridDmndLight {
   position: absolute;
   z-index: 0;
-  overflow: visible;
   width: 153.88px;
   height: 153.88px;
-  background-color: #e5e7eb;
   rotate: 45deg;
   transition: all 300ms ease-in-out;
+  background-color: #e5e7eb;
 }
 
 .gridDmndLight {
   background-color: #f3f3f4;
 }
 
+/* =========================================================
+   HOVER INTERACTIONS
+   ========================================================= */
+
 .demographics:hover {
   scale: 1.05;
 }
+
 .demographics:hover .gridDmndDark {
   background-color: oklch(87.2% 0.01 258.338);
 }
+
 .demographics:hover .selDmndSml {
   opacity: 1;
 }
@@ -166,16 +208,21 @@
   background-color: oklch(87.2% 0.01 258.338);
 }
 
-.summary__btn--mobile-p {
-    display: none;
-  }
+/* =========================================================
+   BUTTON VISIBILITY (Desktop vs Mobile)
+   ========================================================= */
 
+.summary__btn--mobile-p {
+  display: none;
+}
 
 @media (max-width: 640px) {
   .summary__btn--desktop-p {
     display: none;
   }
+
   .summary__btn--mobile-p {
     display: block;
   }
 }
+

@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-import Webcam from "react-webcam";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Result.css";
@@ -13,13 +12,12 @@ import iconLeft from "../../assets/buttin-icon-left.svg";
 import iconFrame from "../../assets/rect-outer-line.svg";
 import camTake from "../../assets/camTakeIcon.svg";
 import { GoDotFill } from "react-icons/go";
-import { FaGalacticSenate } from "react-icons/fa";
 
 const Result = () => {
   const fileInputRef = useRef(null);
   const [preview, setPreview] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [preparing, setPreparing] = useState(false);
+  const [preparing, setPreparing] = useState();
 
   const [showPermission, setShowPermission] = useState(false);
   const [cameraActive, setCameraActive] = useState(false);
@@ -39,12 +37,11 @@ const Result = () => {
         },
       });
       console.log("Camera stream obtained:", newStream);
-      setStream(newStream); 
+      setStream(newStream);
       setTimeout(() => {
         setCameraActive(true);
         setPreparing(false);
       }, 2000);
-    
     } catch (err) {
       console.error("Camera error:", err.name, err.message);
     }
@@ -57,6 +54,14 @@ const Result = () => {
     }
   }, [cameraActive, stream]);
 
+  useEffect(() => {
+    return () => {
+      if (stream) {
+        stream.getTracks().forEach((t) => t.stop());
+      }
+    };
+  }, [stream]);
+
   const capturePhoto = () => {
     const video = videoRef.current;
     const canvas = document.createElement("canvas");
@@ -67,22 +72,23 @@ const Result = () => {
     const base64 = canvas.toDataURL("image/png");
     setCapturedImage(base64);
 
+    setTimeout(() => {
     const stream = video.srcObject;
     if (stream) {
       stream.getTracks().forEach((t) => t.stop());
     }
-
     video.pause();
+    }, 100);
   };
 
   const retakePhoto = () => {
     setCapturedImage(null);
-    startCamera(); 
+    startCamera();
   };
 
   const usePhoto = () => {
     setCameraActive(false);
-    setPreparing(true); 
+    setPreparing(true);
     gallerySend(capturedImage);
   };
 
@@ -157,7 +163,7 @@ const Result = () => {
           </div>
         ) : preparing ? (
           <>
-            <div className="leftBox">
+            <div className="leftBox prep">
               <img
                 src={camera}
                 alt="take photo"
@@ -320,7 +326,7 @@ const Result = () => {
                     Use This Photo
                   </button>
                 </div>
-                  <p className="camera__text prev">Preview</p>
+                <p className="camera__text prev">Preview</p>
               </div>
             </>
           )}
