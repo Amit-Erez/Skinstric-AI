@@ -60,32 +60,63 @@ const Testing = () => {
     setInput(e.target.value);
   };
 
-   async function sendUser() {
-    try {
-      const response = await axios.post(
-        "https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne",
-        user
-      );
-      console.log("Full API Response:", response.data);
-    } catch (error) {
-      console.error("Error sending user:", error);
-    }
-    setLoading(false);
-    const msg = `"SUCCESS": "Added ${user.name} from ${user.location}"`;
-    console.log(msg);
-  }
 
-    useEffect(() => {
-    if (user.name !== "" && user.location !== "") {
-      setLoading(true);
-      setTimeout(() => {
-        sendUser();
-      }, 100);
-    }
+  useEffect(() => {
+  if (!user.name || !user.location) return;
+
+  setLoading(true);
+
+  const id = setTimeout(() => {
+    (async () => {
+      try {
+        const response = await axios.post(
+          "https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne",
+          user
+        );
+        console.log("Full API Response:", response.data);
+
+        const msg = `"SUCCESS": "Added ${user.name} from ${user.location}"`;
+        console.log(msg);
+      } catch (error) {
+        console.error("Error sending user:", error);
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, 100);
+
+  return () => clearTimeout(id);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user, sendUser]);
+}, [user.name, user.location]);
 
 
+
+
+ 
+// keeping for safety - older code
+  //   useEffect(() => {
+  //   if (user.name !== "" && user.location !== "") {
+  //     setLoading(true);
+  //     setTimeout(() => {
+  //       sendUser();
+  //     }, 100);
+  //   }
+  // }, [user]);
+
+  // async function sendUser() {
+  //   try {
+  //     const response = await axios.post(
+  //       "https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne",
+  //       user
+  //     );
+  //     console.log("Full API Response:", response.data);
+  //   } catch (error) {
+  //     console.error("Error sending user:", error);
+  //   }
+  //   setLoading(false);
+  //   const msg = `"SUCCESS": "Added ${user.name} from ${user.location}"`;
+  //   console.log(msg);
+  // }
   
 
 
