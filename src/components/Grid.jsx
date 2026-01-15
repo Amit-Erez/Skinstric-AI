@@ -26,7 +26,8 @@ const Grid = () => {
   const topRace = getTopKey(analysisData?.race);
   const topAge = getTopKey(analysisData?.age);
   const topGender = getTopKey(analysisData?.gender);
-
+  
+  
   useEffect(() => {
     if (!selected[sort] && sortData) {
       const topKey = getTopKey(sortData);
@@ -35,8 +36,8 @@ const Grid = () => {
         [sort]: { label: topKey, value: sortData[topKey] },
       }));
     }
-  }, [sort, sortData]);
-
+  }, [sort, sortData, selected]);
+  
   const current = selected[sort];
 
   return (

@@ -134,7 +134,7 @@ const Result = () => {
       {preview && (
         <div className="preview__box">
           <p>Preview</p>
-          <img src={preview} alt="Preview" className="preview__img" />
+          <img src={preview} alt="Preview of selected file" className="preview__img" />
         </div>
       )}
       <div className="to__start">
@@ -166,7 +166,7 @@ const Result = () => {
             <div className="leftBox prep">
               <img
                 src={camera}
-                alt="take photo"
+                alt="Open camera"
                 className="camera__icon preparing"
                 onClick={() => setShowPermission(true)}
               />
@@ -193,7 +193,7 @@ const Result = () => {
             <div className="leftBox">
               <img
                 src={camera}
-                alt="take photo"
+                alt="take"
                 className="camera__icon"
                 onClick={() => setShowPermission(true)}
               />
@@ -303,7 +303,7 @@ const Result = () => {
                   <p>Take Picture</p>
                   <img
                     src={camTake}
-                    alt="take picture"
+                    alt="take"
                     className="camTake__icon"
                   />
                 </div>

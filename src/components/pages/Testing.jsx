@@ -60,16 +60,7 @@ const Testing = () => {
     setInput(e.target.value);
   };
 
-  useEffect(() => {
-    if (user.name !== "" && user.location !== "") {
-      setLoading(true);
-      setTimeout(() => {
-        sendUser();
-      }, 400);
-    }
-  }, [user]);
-
-  async function sendUser() {
+   async function sendUser() {
     try {
       const response = await axios.post(
         "https://us-central1-frontend-simplified.cloudfunctions.net/skinstricPhaseOne",
@@ -83,6 +74,20 @@ const Testing = () => {
     const msg = `"SUCCESS": "Added ${user.name} from ${user.location}"`;
     console.log(msg);
   }
+
+    useEffect(() => {
+    if (user.name !== "" && user.location !== "") {
+      setLoading(true);
+      setTimeout(() => {
+        sendUser();
+      }, 100);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, sendUser]);
+
+
+  
+
 
   return (
     <section id="testing">
